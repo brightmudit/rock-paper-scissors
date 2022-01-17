@@ -28,12 +28,32 @@
             else if (computerSelection === 'paper' && playerSelection.toLowerCase() === 'rock' || 
                     computerSelection === 'scissor' && playerSelection.toLowerCase() === 'paper' ||
                     computerSelection === 'rock' && playerSelection.toLowerCase() === 'scissor') {
+                        computerScore ++;
                         return `You lose! ${computerSelection} beats ${playerSelection}`;
             }
             else {
+                playerScore ++;
                 return `You won! ${playerSelection} beats ${computerSelection}`;
             }
         }
+
+        function game() {
+            // Play 5 round of the game and decides the final result
+            for (let i = 0; i < 5; i++) {
+                console.log(playRound(computerPlay(), 'rock'));
+            }
+
+            if (playerScore === computerScore) {
+               console.log(`That was a tie!! Your Score: ${playerScore} Computer Score: ${computerScore}`) ;
+            } else if (computerScore > playerScore) {
+                console.log(`You lose!! Your Score: ${playerScore} Computer Score: ${computerScore}`)
+            } else {
+                console.log(`You won!! Your Score: ${playerScore} Computer Score: ${computerScore}`)
+            }
+        }
+
+        let playerScore = 0;
+        let computerScore = 0;
     </script>
 </body>
 </html>
