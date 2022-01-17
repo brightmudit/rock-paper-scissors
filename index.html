@@ -15,6 +15,25 @@
             let choices = ['rock', 'paper', 'scissor'];
             return choices[Math.floor(Math.random() * choices.length)];
         }
+
+        function playRound(computerSelection, playerSelection) {
+            /*
+                Decide who has won and return message accordingly
+            */
+           if (computerSelection === 'paper' && playerSelection.toLowerCase() === 'paper' ||
+                computerSelection === 'scissor' && playerSelection.toLowerCase() === 'scissor' ||
+                computerSelection === 'rock' && playerSelection.toLowerCase() === 'rock') {
+                    return `It's a tie!`;
+           }
+            else if (computerSelection === 'paper' && playerSelection.toLowerCase() === 'rock' || 
+                    computerSelection === 'scissor' && playerSelection.toLowerCase() === 'paper' ||
+                    computerSelection === 'rock' && playerSelection.toLowerCase() === 'scissor') {
+                        return `You lose! ${computerSelection} beats ${playerSelection}`;
+            }
+            else {
+                return `You won! ${playerSelection} beats ${computerSelection}`;
+            }
+        }
     </script>
 </body>
 </html>
