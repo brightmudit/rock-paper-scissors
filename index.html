@@ -39,9 +39,17 @@
 
         function game() {
             // Play 5 round of the game and decides the final result
-            for (let i = 0; i < 5; i++) {
-                const playerChoice = prompt('Type one: Rock, Paper, Scissor ')
-                console.log(playRound(computerPlay(), playerChoice.toLowerCase()));
+            let counter = 0;
+            while (counter < 5) {
+                const playerChoice = prompt('Type one: Rock, Paper, Scissor ');
+                // prevent wrong spelling error
+                if (playerChoice.toLowerCase() === 'rock' || playerChoice.toLowerCase() === 'paper' || playerChoice.toLowerCase() === 'scissor') {
+                    console.log(playRound(computerPlay(), playerChoice.toLowerCase()));
+                    counter ++;
+                } else {
+                    alert('Choose between Rock, Paper, Scissor');
+                    continue;
+                }
             }
 
             if (playerScore === computerScore) {
