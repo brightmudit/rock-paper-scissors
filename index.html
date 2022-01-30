@@ -7,66 +7,9 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <script>
-        function computerPlay() {
-            /*
-                Randomly choose between rock,paper,scissor and return it
-            */
-            let choices = ['rock', 'paper', 'scissor'];
-            return choices[Math.floor(Math.random() * choices.length)];
-        }
-
-        function playRound(computerSelection, playerSelection) {
-            /*
-                Decide who has won and return message accordingly
-            */
-           if (computerSelection === 'paper' && playerSelection === 'paper' ||
-                computerSelection === 'scissor' && playerSelection === 'scissor' ||
-                computerSelection === 'rock' && playerSelection === 'rock') {
-                    return `It's a tie! ${computerSelection} never beats ${playerSelection}`;
-           }
-            else if (computerSelection === 'paper' && playerSelection === 'rock' || 
-                    computerSelection === 'scissor' && playerSelection === 'paper' ||
-                    computerSelection === 'rock' && playerSelection === 'scissor') {
-                        computerScore ++;
-                        return `You lose! ${computerSelection} beats ${playerSelection}`;
-            }
-            else {
-                playerScore ++;
-                return `You won! ${playerSelection} beats ${computerSelection}`;
-            }
-        }
-
-        function game() {
-            // Play 5 round of the game and decides the final result
-            let counter = 0;
-            while (counter < 5) {
-                const playerChoice = prompt('Type one: Rock, Paper, Scissor ');
-                // prevent wrong spelling error
-                if (playerChoice.toLowerCase() === 'rock' || playerChoice.toLowerCase() === 'paper' || playerChoice.toLowerCase() === 'scissor') {
-                    console.log(playRound(computerPlay(), playerChoice.toLowerCase()));
-                    counter ++;
-                } else {
-                    alert('Choose between Rock, Paper, Scissor');
-                    continue;
-                }
-            }
-
-            if (playerScore === computerScore) {
-               console.log(`That was a tie!! Your Score: ${playerScore} Computer Score: ${computerScore}`) ;
-            } else if (computerScore > playerScore) {
-                console.log(`You lose!! Your Score: ${playerScore} Computer Score: ${computerScore}`)
-            } else {
-                console.log(`You won!! Your Score: ${playerScore} Computer Score: ${computerScore}`)
-            }
-
-            playerScore = 0;
-            computerScore = 0;
-        }
-
-        let playerScore = 0;
-        let computerScore = 0;
-        game()
-    </script>
+    <button class="btn" id="rock">Rock</button>
+    <button class="btn" id="paper">Paper</button>
+    <button class="btn" id="scissor">Scissor</button>
+<script src="script.js"></script>
 </body>
 </html>
