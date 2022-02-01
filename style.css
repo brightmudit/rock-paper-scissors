@@ -1,0 +1,75 @@
+body {
+    background: url(Images/rock-paper-scissors-seamless-pattern.jpg);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-frame {
+    border: 3px solid;
+    height: 550px;
+    margin: 0px 35px;
+    background: #0000004a;
+    border-radius: 20px;
+}
+.score-frame {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.corona-score,
+.player-score {
+    display: flex;
+    align-items: center;
+    flex: 1 1 0%;
+}
+
+.player-score {
+    justify-content: flex-end;
+}
+.score-frame img {
+    height: auto;
+    width: 25%;
+}
+.result-frame {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.result-frame .results-box {
+    width: 200px;
+    height: 200px;
+    background: gray;
+}
+.buttons-frame {
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons-frame img {
+    height: auto;
+    width: 35%;
+}
+
+.buttons-frame div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 auto;
+    width: 280px;
+    padding: -31px;
+    height: 150px;
+    border: 2px solid;
+    border-radius: 10px;
+}
+
+.rock-btn {
+    background: #ffffdf;
+}
+.paper-btn {
+    background: #cff7f7;
+}
+.scissor-btn {
+    background: #f9e2e6;
+}
