@@ -7,9 +7,27 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <button class="btn" id="rock">Rock</button>
-    <button class="btn" id="paper">Paper</button>
-    <button class="btn" id="scissor">Scissor</button>
+    <div class="main-frame">
+        <div class="score-frame">
+            <div class="corona-score">
+                <img src="Images/corona-virus.png" alt="Corona Virus Image">
+                <span>0</span>
+            </div>
+            <div class="player-score">
+                <span>0</span>
+                <img src="Images/human.png" alt="An Human Image">
+            </div>
+        </div>
+        <div class="result-frame">
+            <span>Results</span>
+            <div class="results-box"></div>
+        </div>
+        <div class="buttons-frame">
+            <button class="btn" id="rock">Rock</button>
+            <button class="btn" id="paper">Paper</button>
+            <button class="btn" id="scissor">Scissor</button>
+        </div>
+    </div>
 <script src="script.js"></script>
 </body>
 </html>
