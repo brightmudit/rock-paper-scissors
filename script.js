@@ -1,29 +1,23 @@
 function computerPlay() {
-    /*
-        Randomly choose between rock,paper,scissor and return it
-    */
     let choices = ['rock', 'paper', 'scissor'];
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
 function playRound(computerSelection, playerSelection) {
-    /*
-        Decide who has won and return message accordingly
-    */
    if (computerSelection === 'paper' && playerSelection === 'paper' ||
         computerSelection === 'scissor' && playerSelection === 'scissor' ||
         computerSelection === 'rock' && playerSelection === 'rock') {
-            return `It's a tie! ${computerSelection} never beats ${playerSelection}`;
+        displayResult(`It's a tie! ${computerSelection} never beats ${playerSelection}`);
    }
     else if (computerSelection === 'paper' && playerSelection === 'rock' || 
             computerSelection === 'scissor' && playerSelection === 'paper' ||
             computerSelection === 'rock' && playerSelection === 'scissor') {
-                computerScore ++;
-                return `You lose! ${computerSelection} beats ${playerSelection}`;
+            computerScore ++;
+            displayResult(`You lose! ${computerSelection} beats ${playerSelection}`);
     }
     else {
         playerScore ++;
-        return `You won! ${playerSelection} beats ${computerSelection}`;
+        displayResult(`You won! ${playerSelection} beats ${computerSelection}`);
     }
 }
 
@@ -40,10 +34,22 @@ function decideWinner() {
     computerScore = 0;
 }
 
+function css(element, style) {
+    for (const property in style)
+        element.style[property] = style[property];
+}
+
+function displayResult(result) {
+    const resultBox = document.querySelector('.results-box');
+    resultBox.textContent = '';
+    resultBox.textContent = result;
+    resultBox.appendChild(para)
+
+    
+}
+
 let playerScore = 0;
 let computerScore = 0;
 
-const buttons = document.querySelectorAll('.btn');
-
-buttons.forEach(button => button.addEventListener('click', () => playRound(computerPlay(), button.id)));
-// decideWinner();
+const buttons = document.querySelectorAll('.button');
+buttons.forEach(btn => btn.addEventListener('click', () => playRound(computerPlay(), btn.classList[1])));
