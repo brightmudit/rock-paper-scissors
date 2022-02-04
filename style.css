@@ -18,8 +18,8 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-.corona-score,
-.player-score {
+.corona-score-div,
+.player-score-div {
     display: flex;
     align-items: center;
     flex: 1 1 0%;
@@ -28,7 +28,7 @@ body {
     font-size: 20px;
 }
 
-.player-score {
+.player-score-div {
     justify-content: flex-end;
 }
 .score-frame img {
@@ -50,6 +50,11 @@ body {
     height: 300px;
     border-radius: 22px;
     border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 43px;
+    color: white;
 }
 .buttons-frame {
     display: flex;
