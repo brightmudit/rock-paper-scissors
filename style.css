@@ -1,13 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies&display=swap');
 body {
     background: url(Images/rock-paper-scissors-seamless-pattern.jpg);
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Rowdies', cursive;
 }
 .main-frame {
     border: 3px solid;
-    height: 550px;
     margin: 0px 35px;
     background: #0000004a;
     border-radius: 20px;
@@ -23,6 +24,9 @@ body {
     align-items: center;
     flex: 1 1 0%;
 }
+.score-frame span {
+    font-size: 20px;
+}
 
 .player-score {
     justify-content: flex-end;
@@ -37,22 +41,47 @@ body {
     flex-direction: column;
     justify-content: center;
 }
+.result-frame span {
+    font-size: 35px;
+    padding: 8px;
+}
 .result-frame .results-box {
-    width: 200px;
-    height: 200px;
-    background: gray;
+    width: 750px;
+    height: 300px;
+    border-radius: 22px;
+    border: 2px solid white;
 }
 .buttons-frame {
     display: flex;
     justify-content: space-around;
+    padding: 17px 12px;
 }
 
 .buttons-frame img {
     height: auto;
-    width: 35%;
+    border: 4px solid black;
+    width: 13%;
+    background: white;
+    border-radius: 18px;
+}
+.buttons-frame img:hover {
+    cursor: pointer;
+}
+.buttons-frame .rock:hover {
+    border-color: #ffe84a;
+    box-shadow: 5px 5px 12px #ffe84a;
 }
 
-.buttons-frame div {
+.buttons-frame .paper:hover {
+    border-color: #00e1d4;
+    box-shadow: 5px 5px 12px #00e1d4;
+}
+
+.buttons-frame .scissor:hover {
+    border-color: #f1baf5;
+    box-shadow: 5px 5px 12px #f1baf5;
+}
+/* .buttons-frame div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,9 +91,9 @@ body {
     height: 150px;
     border: 2px solid;
     border-radius: 10px;
-}
+} */
 
-.rock-btn {
+/* .rock-btn {
     background: #ffffdf;
 }
 .paper-btn {
@@ -72,4 +101,4 @@ body {
 }
 .scissor-btn {
     background: #f9e2e6;
-}
+} */
