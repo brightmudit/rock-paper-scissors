@@ -4,37 +4,37 @@ function computerPlay() {
 }
 
 function playRound(computerSelection, playerSelection) {
-   if (computerSelection === 'paper' && playerSelection === 'paper' ||
+    if (computerSelection === 'paper' && playerSelection === 'paper' ||
         computerSelection === 'scissor' && playerSelection === 'scissor' ||
         computerSelection === 'rock' && playerSelection === 'rock') {
         displayResult(`It's a tie! ${computerSelection} never beats ${playerSelection}`);
         displayScore(coronaScore, playerScore);
-   }
-    else if (computerSelection === 'paper' && playerSelection === 'rock' || 
-            computerSelection === 'scissor' && playerSelection === 'paper' ||
-            computerSelection === 'rock' && playerSelection === 'scissor') {
-            coronaScore ++;
-            displayResult(`You lose! ${computerSelection} beats ${playerSelection}`);
-            displayScore(coronaScore, playerScore);
-    }
-    else {
+    } else if (computerSelection === 'paper' && playerSelection === 'rock' || 
+        computerSelection === 'scissor' && playerSelection === 'paper' ||
+        computerSelection === 'rock' && playerSelection === 'scissor') {
+        coronaScore ++;
+        displayResult(`You lose! ${computerSelection} beats ${playerSelection}`);
+        displayScore(coronaScore, playerScore);
+    } else {
         playerScore ++;
         displayResult(`You won! ${playerSelection} beats ${computerSelection}`);
         displayScore(coronaScore, playerScore);
     }
+
+    checkScoreReachLimit();
+    
 }
 
 function decideWinner() {
     if (playerScore === coronaScore) {
-        console.log(`That was a tie!! Your Score: ${playerScore} Computer Score: ${coronaScore}`) ;
+        alert("It was a tie match!! Try again to defeat corona") ;
     } else if (coronaScore > playerScore) {
-        console.log(`You lose!! Your Score: ${playerScore} Computer Score: ${coronaScore}`)
+        alert("You lose!! Corona has captured all world :(")
     } else {
-        console.log(`You won!! Your Score: ${playerScore} Computer Score: ${coronaScore}`)
+        alert("You Won!! Corona has leaved the world :)")
     }
 
-    playerScore = 0;
-    coronaScore = 0;
+    window.location.reload()
 }
 
 function css(element, style) {
@@ -43,20 +43,24 @@ function css(element, style) {
 }
 
 function displayResult(result) {
-    const resultBox = document.querySelector('.results-box');
     resultBox.textContent = '';
     resultBox.textContent = result;
 }
 
 function displayScore(coronaScore, playerScore) {
-    const coronaScoreSpan = document.querySelector('.corona-score');
-    const playerScoreSpan = document.querySelector('.player-score');
     coronaScoreSpan.textContent = coronaScore;
     playerScoreSpan.textContent = playerScore;
+}
+
+function checkScoreReachLimit() {
+    if (coronaScore >= 5 || playerScore >= 5) setTimeout(decideWinner, 2    );
 }
 
 let playerScore = 0;
 let coronaScore = 0;
 
+const resultBox = document.querySelector('.results-box');
+const coronaScoreSpan = document.querySelector('.corona-score');
+const playerScoreSpan = document.querySelector('.player-score');
 const buttons = document.querySelectorAll('.button');
 buttons.forEach(btn => btn.addEventListener('click', () => playRound(computerPlay(), btn.classList[1])));
