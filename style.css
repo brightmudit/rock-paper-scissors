@@ -26,6 +26,7 @@ body {
 }
 .score-frame span {
     font-size: 20px;
+    color: white;
 }
 
 .player-score-div {
