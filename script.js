@@ -56,6 +56,10 @@ function checkScoreReachLimit() {
     if (coronaScore >= 5 || playerScore >= 5) setTimeout(decideWinner, 2    );
 }
 
+function showInstructions() {
+    alert("Instructions :-\n1.You need to defeat corona virus by scoring 5 first\n2.If corona wins it will capture this world\n3. If you wins it will leave this world & everything becomes normal.\n Best of luck");
+}
+setTimeout(showInstructions, 500);
 let playerScore = 0;
 let coronaScore = 0;
 
